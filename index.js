@@ -1,0 +1,2 @@
+
+import "./lib/components/app";
