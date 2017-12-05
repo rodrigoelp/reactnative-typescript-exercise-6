@@ -28,3 +28,20 @@ After checking the redux docos and some tuts, I understand that I need to:
 1. Now you will need to connect the action to the container by calling `bindActionCreators` with the `dispatch` as: `function matchDispatchToProps(dispatch) { return bindActionCreators({ actionName: action }, dispatch); }`
 1. Change `connect` to take in the `matchDispatchToProps` as follows: `connect(mapStateToProps, matchDispatchToProps)(ContainerName)`. This will expose the action to your component by adding it to its properties.
 1. Changing the reducers to create new states based on actions. What it means is, either I create a new reducer (for instance, if I am selecting a song to add to my shopping cart, then my `cartReducer` will receive the action of type `songSelected` and append it to the list of songs in the cart and return the new object).
+
+## How to run this code?
+
+```sh
+# Cloning the repo to 'simpleredux'
+git clone git@github.com:rodrigoelp/reactnative-typescript-exercise-6.git simpleredux
+# Changing directory
+cd simpleredux/
+# Installing dependencies
+yarn # if you have not installed yarn, then change it to: npm install
+# Compiling the typescript code
+./node_modules/.bin/tsc
+# Launching the react-native development server
+open -a Terminal "`react-native start`"
+# Compiling the code for ios and deploying it to the simulator
+react-native run-ios # optionally, type: react-native run-android
+```
